@@ -209,8 +209,8 @@ button {
 }
 
 .hero-photo {
-  width: 220px;
-  height: 220px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   background: var(--bg-card);
   margin: 0 auto 32px;
