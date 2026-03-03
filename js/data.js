@@ -266,7 +266,7 @@ const LINKEDIN_POSTS = [
     likes: 65,
     comments: 6,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/alpfa.png"
   },
   {
     title: "Lawrence Livermore National Lab Visit",
