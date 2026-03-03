@@ -257,7 +257,7 @@ const LINKEDIN_POSTS = [
     likes: 76,
     comments: 8,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/vitanova.png",
   },
   {
     title: "ALPHA Tech Summit at Microsoft",
