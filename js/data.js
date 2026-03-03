@@ -248,7 +248,7 @@ const LINKEDIN_POSTS = [
     likes: 89,
     comments: 12,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/datathon.png"
   },
   {
     title: "VitaNova AI at HackHayward",
@@ -275,7 +275,7 @@ const LINKEDIN_POSTS = [
     likes: 54,
     comments: 5,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/lawrence.png"
   },
   {
     title: "Tesla Factory Visit",
@@ -284,7 +284,7 @@ const LINKEDIN_POSTS = [
     likes: 72,
     comments: 9,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/tesla.png"
   },
   {
     title: "What I Built in MSBA — Week 1",
