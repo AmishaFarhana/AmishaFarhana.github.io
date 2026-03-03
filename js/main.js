@@ -248,8 +248,12 @@ document.addEventListener('DOMContentLoaded', () => {
       (post) => `
       <div class="linkedin-card reveal">
         <div class="post-image">
-          <span style="color:var(--text-secondary);font-size:0.85rem">\uD83D\uDCF8 Photo Placeholder</span>
-        </div>
+  ${
+    post.image
+      ? `<img src="${post.image}" alt="${post.title}" />`
+      : `<span style="color:var(--text-secondary);font-size:0.85rem">📸 Photo Placeholder</span>`
+  }
+</div>
         <div class="post-body">
           <span class="post-date">${post.date}</span>
           <h3>${post.title}</h3>
