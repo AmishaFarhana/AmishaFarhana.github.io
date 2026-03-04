@@ -973,10 +973,30 @@ button {
 /* ==============================================
    Leadership Cards
    ============================================== */
+
+  /* =====================
+   Leadership Carousel
+   ===================== */
+.leadership-carousel-wrapper {
+  position: relative;
+}
+
+.leadership-carousel-track-outer {
+  overflow: hidden;
+}
+
 #leadership-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  display: flex;
   gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+
+#leadership-cards.is-dragging {
+  cursor: grabbing;
+  transition: none;
 }
 
 .leadership-card {
@@ -986,6 +1006,9 @@ button {
   border: 1px solid var(--border);
   border-left: 4px solid var(--accent-primary);
   transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: calc((100% - 48px) / 3);
+  box-sizing: border-box;
 }
 
 .leadership-card:hover {
@@ -1016,6 +1039,82 @@ button {
   font-size: 0.9rem;
   transition: color 0.4s ease, border-color 0.4s ease;
 }
+
+/* Carousel nav buttons */
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  background: var(--bg-card);
+  color: var(--accent-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: scale(1.08);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: var(--accent-primary);
+  width: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .leadership-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+    min-width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .leadership-card {
+    flex: 0 0 85vw;
+    min-width: 85vw;
+  }
+}
+
 
 /* ==============================================
    Quote Section
