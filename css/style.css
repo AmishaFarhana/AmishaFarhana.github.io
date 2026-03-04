@@ -1451,89 +1451,62 @@ button {
   border-width: 0;
 }
 
-/* ============================
-   More Volunteering (Carousel)
-   ============================ */
-
-.community-more-heading {
-  margin-top: 2.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
+/* --- Community: horizontal scroll row (Leadership + More + Volunteering) --- */
+.leadership-scroll-wrap {
+  overflow-x: auto;
+  padding-bottom: 12px; /* space for scrollbar */
+  scroll-behavior: smooth;
 }
 
-.volunteering-carousel {
-  margin-top: 1rem;
+.leadership-scroll {
   display: flex;
-  gap: 1.25rem;
-  overflow-x: auto;
-  padding: 0.5rem 0.25rem 1rem;
+  gap: 22px;
+  align-items: stretch;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  padding: 6px 2px;
 }
 
-.volunteering-carousel::-webkit-scrollbar {
-  height: 8px;
+.leadership-scroll .leadership-card {
+  flex: 0 0 420px;           /* card width (adjust if you want bigger/smaller) */
+  scroll-snap-align: start;  /* snaps one-by-one */
 }
 
-.volunteering-carousel::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-}
-
-.volunteering-carousel::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.volunteer-card {
-  flex: 0 0 340px;               /* card width */
-  scroll-snap-align: start;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.volunteer-image {
+/* images on top of cards */
+.leadership-img {
   width: 100%;
-  height: 170px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.volunteer-image img {
-  width: 100%;
-  height: 100%;
+  height: 220px;
   object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 14px;
   display: block;
 }
 
-.volunteer-content {
-  padding: 1rem 1rem 1.1rem;
+/* More card styling */
+.more-card {
+  cursor: pointer;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.volunteer-year {
-  font-size: 0.85rem;
-  opacity: 0.75;
+.more-card:hover {
+  transform: translateY(-2px);
 }
 
-.volunteer-content h4 {
-  margin: 0.35rem 0 0.35rem;
-  font-size: 1.05rem;
+.more-card .more-inner {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.more-card .more-title {
   font-weight: 700;
+  font-size: 1.3rem;
 }
 
-.volunteer-org {
-  display: inline-block;
-  font-size: 0.9rem;
+.more-card .more-sub {
   opacity: 0.8;
-  margin-bottom: 0.6rem;
-}
-
-.volunteer-content p {
-  margin: 0;
-  line-height: 1.55;
-  opacity: 0.85;
   font-size: 0.95rem;
 }
