@@ -293,6 +293,13 @@ if (leadershipContainer && typeof LEADERSHIPHIGHLIGHTS !== 'undefined') {
   // Render cards
   leadershipContainer.innerHTML = LEADERSHIPHIGHLIGHTS.map(item => `
     <div class="leadership-card reveal">
+    ${
+  card.image
+    ? `<div class="leadership-image">
+         <img src="${card.image}" alt="${card.title}" />
+       </div>`
+    : ""
+}
       <h3>${item.role}</h3>
       <p class="narrative">${item.narrative}</p>
       <p class="impact">${item.impact}</p>
