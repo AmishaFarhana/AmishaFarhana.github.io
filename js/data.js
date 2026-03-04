@@ -423,32 +423,6 @@ const LEADERSHIP_HIGHLIGHTS = [
     impact: "This role shaped my early leadership identity. It taught me ownership, initiative, and how powerful structured community engagement can be."
   }
 ];
-const VOLUNTEERING_EXPERIENCES = [
-  {
-    title: "Library Student Ambassador — CSUEB",
-    org: "California State University, East Bay",
-    year: "2024",
-    image: "assets/lib.png",
-    description:
-      "Support students with research assistance and resource navigation while leading outreach initiatives that strengthen campus engagement and student success."
-  },
-  {
-    title: "Orientation Leader — CSUEB",
-    org: "California State University, East Bay",
-    year: "2025",
-    image: "assets/orientation.png",
-    description:
-      "Led campus tours and orientation programming for incoming students, helping them navigate university resources and build a strong sense of belonging from day one."
-  },
-  {
-    title: "Pioneers’ Perspectives — Episode 2",
-    org: "Business Analytics Club, CSUEB",
-    year: "2024",
-    image: "assets/pioneers.png",
-    description:
-      "Organized and led a flagship analytics event bringing together alumni, faculty, and industry speakers for keynotes, panel discussions, and career conversations."
-  }
-];
 
 const QUOTES = [
   "Analytics and technical skills matter — but so do empathy, representation, and community building.",
