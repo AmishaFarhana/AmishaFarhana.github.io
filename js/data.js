@@ -241,6 +241,15 @@ const ALL_PROJECTS = {
 };
 
 const LINKEDIN_POSTS = [
+   {
+    title: "VP of Business Analytics Club",
+    date: "2024",
+    snippet: "Honored to serve as Vice President of the Business Analytics Club at CSUEB. Looking forward to building bridges between students and industry through meaningful events and initiatives.",
+    likes: 83,
+    comments: 11,
+    linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
+    image: "assets/vp.png"
+  },
   {
     title: "CSUEB's First Datathon 1.0",
     date: "2024",
@@ -287,7 +296,7 @@ const LINKEDIN_POSTS = [
     image: "assets/tesla.png"
   },
   {
-    title: "What I Built in MSBA — Week 1",
+    title: "Orientation Leader",
     date: "2025",
     snippet: "Insurance Claims Risk Segmentation for Allianz — my first deep dive into clustering and supervised modeling for real-world insurance analytics. #WhatIBuiltInMSBA",
     likes: 48,
@@ -296,20 +305,11 @@ const LINKEDIN_POSTS = [
     image: "assets/ol.png"
   },
   {
-    title: "Women in Leadership Forum",
+    title: "Pioneer's Perspective - Episode 2",
     date: "2024",
     snippet: "Empowering conversations about leadership, resilience, and breaking barriers. Proud to be part of a community that uplifts women in business and technology.",
     likes: 61,
     comments: 4,
-    linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    image: "assets/wil.png"
-  },
-  {
-    title: "VP of Business Analytics Club",
-    date: "2024",
-    snippet: "Honored to serve as Vice President of the Business Analytics Club at CSUEB. Looking forward to building bridges between students and industry through meaningful events and initiatives.",
-    likes: 83,
-    comments: 11,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
     image: "assets/pp.png"
   }
