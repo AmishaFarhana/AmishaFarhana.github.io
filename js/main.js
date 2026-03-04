@@ -279,6 +279,13 @@ document.addEventListener('DOMContentLoaded', () => {
     leadershipContainer.innerHTML = LEADERSHIP_HIGHLIGHTS.map(
       (item) => `
       <div class="leadership-card reveal">
+      ${
+  item.image
+    ? `<div class="leadership-image">
+         <img src="${item.image}" alt="${item.role}" />
+       </div>`
+    : ""
+}
         <h3>${item.role}</h3>
         <p class="narrative">${item.narrative}</p>
         <p class="impact">"${item.impact}"</p>
