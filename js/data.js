@@ -261,7 +261,7 @@ const LINKEDIN_POSTS = [
   },
   {
     title: "Library Ambassador",
-    date: "2024",
+    date: "2025",
     snippet: "Support students through research assistance and resource navigation while leading outreach initiatives that strengthen campus engagement. Contribute to operational improvements and data-informed student support strategies within the university library system.",
     likes: 79,
     comments: 10,
@@ -270,7 +270,7 @@ const LINKEDIN_POSTS = [
   },
   {
     title: "ALPHA Tech Summit at Microsoft",
-    date: "2024",
+    date: "2025",
     snippet: "An incredible experience at Microsoft's campus — connecting with tech leaders and seeing the future of AI and cloud computing up close. Grateful for the exposure and the networks built.",
     likes: 65,
     comments: 6,
@@ -279,7 +279,7 @@ const LINKEDIN_POSTS = [
   },
   {
     title: "Lawrence Livermore National Lab Visit",
-    date: "2024",
+    date: "2025",
     snippet: "Visiting one of the nation's premier research institutions — learning about cutting-edge computational science and national security applications of data science.",
     likes: 54,
     comments: 5,
@@ -288,7 +288,7 @@ const LINKEDIN_POSTS = [
   },
   {
     title: "Tesla Factory Visit",
-    date: "2024",
+    date: "2025",
     snippet: "Industry exposure at its finest, witnessing the intersection of manufacturing innovation, data-driven operations, and sustainability at Tesla's facility.",
     likes: 72,
     comments: 9,
@@ -306,7 +306,7 @@ const LINKEDIN_POSTS = [
   },
   {
     title: "Pioneer's Perspective - Episode 2",
-    date: "2024",
+    date: "2025",
     snippet: "Organized and executed a large-scale Business Analytics Club event featuring alumni and industry leaders, delivering keynote sessions and extended career forums that strengthened networking and professional development opportunities for students.",
     likes: 102,
     comments: 1,
