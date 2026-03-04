@@ -292,7 +292,29 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`
     ).join('');
   }
+// 13. Render Volunteering Carousel
+const volunteeringContainer = document.getElementById("volunteering-carousel");
 
+if (
+  volunteeringContainer &&
+  typeof VOLUNTEERING_EXPERIENCES !== "undefined"
+) {
+  volunteeringContainer.innerHTML = VOLUNTEERING_EXPERIENCES.map(
+    (item) => `
+      <div class="volunteer-card">
+        <div class="volunteer-image">
+          <img src="${item.image}" alt="${item.title}" />
+        </div>
+        <div class="volunteer-content">
+          <span class="volunteer-year">${item.year}</span>
+          <h4>${item.title}</h4>
+          <span class="volunteer-org">${item.org}</span>
+          <p>${item.description}</p>
+        </div>
+      </div>
+    `
+  ).join("");
+}
   // ----------------------------------------------------------
   // 12. Render Quotes
   // ----------------------------------------------------------
