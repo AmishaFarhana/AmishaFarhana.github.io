@@ -404,25 +404,49 @@ const SKILLS = {
   "Tools": ["MS Project", "Excel", "Notion", "Git", "Jupyter"]
 };
 
-const LEADERSHIP_HIGHLIGHTS = [
+const LEADERSHIPHIGHLIGHTS = [
   {
     role: "VP & Events Officer — Business Analytics Club",
-    narrative: "Serving as Vice President and Events Officer for the Business Analytics Club has been one of the most defining experiences of my graduate journey. I helped lead and organize initiatives that connected students directly with industry professionals. We hosted 'Pioneers\\' Perspectives,' organized CSUEB's first-ever Datathon — a 36-hour hackathon centered around sustainability — and ran workshops like 'Excel with Tableau' and industry visits including HCL Technologies.",
+    narrative: "Serving as Vice President and Events Officer for the Business Analytics Club has been one of the most defining experiences of my graduate journey. I helped lead and organize initiatives that connected students directly with industry professionals. We hosted 'Pioneers' Perspectives,' organized CSUEB's first-ever Datathon — a 36-hour hackathon centered around sustainability — and ran workshops like 'Excel with Tableau' and industry visits including HCL Technologies.",
     impact: "What I learned most wasn't just event management — it was stakeholder alignment, collaboration, resilience under pressure, and how powerful structured exposure to industry can be."
   },
   {
     role: "Senator — College of Business & Economics",
-    image: "assets/senator.jpeg",
     narrative: "As Senator, I represented undergraduate and graduate students across departments, serving as a bridge between students, faculty, and the Dean's Office. This role required really listening to student concerns around course availability, academic resources, and career readiness.",
     impact: "It gave me a deeper appreciation for governance, policy discussions, and how institutional decisions affect real student outcomes."
   },
   {
     role: "President — EmpowerHer Club",
-    image: "assets/empowerher.png",
     narrative: "Before graduate school, I served as President of EmpowerHer Club, where we designed and delivered engaging lessons for young girls in local government-run schools. We organized outreach initiatives, built partnerships with local organizations, and promoted education and confidence-building.",
     impact: "This role shaped my early leadership identity. It taught me ownership, initiative, and how powerful structured community engagement can be."
+  },
+  {
+    role: "Industry Visit — HCL Technologies, Santa Clara",
+    narrative: "Thanks to the invitation of Sudharshan Seerapu, Practice Director of Data Engineering & AI at HCL America, we visited the HCLTech office in Santa Clara. We learned about cutting-edge work in Generative AI, connected with Kanu Priya, Global Head of People Analytics, and attended a Tableau workshop led by Sudharshan himself.",
+    impact: "This experience wasn't just about learning — it was about creating lasting connections and building bridges between academia and industry."
+  },
+  {
+    role: "AWS Community Day & Google Office Visit",
+    narrative: "Just one month into my Master's in Business Analytics at CSUEB, I attended AWS Community Day hosted by Amazon — networking with industry leaders and exploring the latest in cloud and AI. I also had the privilege of visiting the Google office, witnessing innovation and vibrant culture firsthand.",
+    impact: "These early experiences deepened my passion for technology and data-driven solutions, and reminded me to stay fearless in exploring new tools."
+  },
+  {
+    role: "RAG Workshop — AI Alliance",
+    narrative: "I attended an incredible workshop on Retrieval-Augmented Generation (RAG) featuring speakers from Zilliz (Milvus) and AI Alliance. Sujee Maniyam's words — 'Everybody is always learning' — grounded me. The session covered building RAG applications with vector databases, making complex concepts remarkably accessible.",
+    impact: "Tinker with it. You only learn by doing. That mindset is something I've embraced ever since."
+  },
+  {
+    role: "Volunteer — LG NOVA InnoFest 2024",
+    narrative: "I volunteered at LG NOVA's 4th Annual InnoFest 2024 at the Palace of Fine Arts in San Francisco, themed 'Lighting the Halo of Innovation.' I engaged in sessions on HealthTech, AI, CleanTech, and Life Sciences — even giving a spontaneous pitch to award-winning scientist and mentor Elizabeth Scallon.",
+    impact: "The conversations, knowledge, and insights gained at InnoFest will stay with me as I continue to explore innovation and its power to shape a better world."
+  },
+  {
+    role: "Volunteer — CIO Scholarship Fund Golf Tournament",
+    narrative: "I volunteered at the CIO Scholarship Fund's 15th Annual Golf Tournament at Wente Vineyards in Livermore, California — an event dedicated to helping economically disadvantaged students pursue their dreams in technology. The Fund has contributed over $600,000 to students in tech, and our raffle sales surpassed $3,100.",
+    impact: "Being part of an event that empowers future technology leaders reinforced my belief that giving back is just as important as moving forward."
   }
 ];
+
 
 const QUOTES = [
   "Analytics and technical skills matter — but so do empathy, representation, and community building.",
