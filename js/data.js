@@ -412,11 +412,13 @@ const LEADERSHIP_HIGHLIGHTS = [
   },
   {
     role: "Senator — College of Business & Economics",
+    image: "assets/senator.jpeg",
     narrative: "As Senator, I represented undergraduate and graduate students across departments, serving as a bridge between students, faculty, and the Dean's Office. This role required really listening to student concerns around course availability, academic resources, and career readiness.",
     impact: "It gave me a deeper appreciation for governance, policy discussions, and how institutional decisions affect real student outcomes."
   },
   {
     role: "President — EmpowerHer Club",
+    image: "assets/empowerher.png",
     narrative: "Before graduate school, I served as President of EmpowerHer Club, where we designed and delivered engaging lessons for young girls in local government-run schools. We organized outreach initiatives, built partnerships with local organizations, and promoted education and confidence-building.",
     impact: "This role shaped my early leadership identity. It taught me ownership, initiative, and how powerful structured community engagement can be."
   }
