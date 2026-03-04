@@ -269,73 +269,29 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`
     ).join('');
   }
+
 // --------------------------------------------------------
-// 11. Render Leadership + Volunteering as ONE horizontal row
-// --------------------------------------------------------
-const leadershipContainer = document.getElementById("leadership-cards");
+  // 11. Render Leadership Cards
+  // ----------------------------------------------------------
+  const leadershipContainer = document.getElementById('leadership-cards');
 
-if (leadershipContainer && typeof LEADERSHIP_HIGHLIGHTS !== "undefined") {
-  // Make sure container has the horizontal scroll class even if HTML forgot it
-  leadershipContainer.classList.add("leadership-scroll");
-
-  const items = [];
-
-  // 1) Your 3 main leadership cards first
-  LEADERSHIP_HIGHLIGHTS.forEach((x) => items.push({ type: "lead", ...x }));
-
-  // 2) The “More” card after EmpowerHer
-  items.push({ type: "more" });
-
-  // 3) Extra volunteering cards after that
-  if (typeof VOLUNTEERING_EXPERIENCES !== "undefined") {
-    VOLUNTEERING_EXPERIENCES.forEach((v) => items.push({ type: "vol", ...v }));
-  }
-
-  leadershipContainer.innerHTML = items
-    .map((item) => {
-      if (item.type === "more") {
-        return `
-          <div class="leadership-card reveal more-card" id="more-volunteering">
-            <div class="more-inner">
-              <div class="more-title">More</div>
-              <div class="more-sub">Volunteering →</div>
-            </div>
-          </div>
-        `;
-      }
-
-      // lead + vol cards (both look same)
-      const title = item.role || item.title || "";
-      const subtitle = item.org ? `<div style="opacity:.75;margin-top:6px;">${item.org}</div>` : "";
-      const year = item.year ? `<div style="opacity:.7;font-size:.9rem;margin-top:8px;">${item.year}</div>` : "";
-      const narrative = item.narrative || item.description || "";
-      const impact = item.impact || "";
-
-      return `
-        <div class="leadership-card reveal">
-          ${item.image ? `<img class="leadership-img" src="${item.image}" alt="${title}" />` : ""}
-          ${year}
-          <h3>${title}</h3>
-          ${subtitle}
-          <p class="narrative">${narrative}</p>
-          ${impact ? `<p class="impact">${impact}</p>` : ""}
-        </div>
-      `;
-    })
-    .join("");
-
-  // Click “More” → smoothly scroll to the next card (first volunteering)
-  const moreBtn = document.getElementById("more-volunteering");
-  if (moreBtn) {
-    moreBtn.addEventListener("click", () => {
-      const cards = leadershipContainer.querySelectorAll(".leadership-card");
-      // More card is after the first 3, so next is first volunteering
-      const next = cards[4]; // 0,1,2 = first three; 3 = More; 4 = first volunteering
-      if (next) next.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
-    });
-  }
+  if (leadershipContainer && typeof LEADERSHIP_HIGHLIGHTS !== 'undefined') {
+    leadershipContainer.innerHTML = LEADERSHIP_HIGHLIGHTS.map(
+      (item) => `
+      <div class="leadership-card reveal">
+      ${
+  item.image
+    ? `<div class="leadership-image">
+         <img src="${item.image}" alt="${item.role}" />
+       </div>`
+    : ""
 }
-
+        <h3>${item.role}</h3>
+        <p class="narrative">${item.narrative}</p>
+        <p class="impact">"${item.impact}"</p>
+      </div>`
+    ).join('');
+  }
   // ----------------------------------------------------------
   // 12. Render Quotes
   // ----------------------------------------------------------
