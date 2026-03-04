@@ -269,52 +269,57 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`
     ).join('');
   }
+// 11. Render Leadership + Volunteering (as one horizontal row)
+const leadershipContainer = document.getElementById("leadership-cards");
 
-  // ----------------------------------------------------------
-  // 11. Render Leadership Cards
-  // ----------------------------------------------------------
-  const leadershipContainer = document.getElementById('leadership-cards');
-
-  if (leadershipContainer && typeof LEADERSHIP_HIGHLIGHTS !== 'undefined') {
-    leadershipContainer.innerHTML = LEADERSHIP_HIGHLIGHTS.map(
-      (item) => `
+if (leadershipContainer && typeof LEADERSHIP_HIGHLIGHTS !== "undefined") {
+  const leadershipCards = LEADERSHIP_HIGHLIGHTS.map(
+    (item) => `
       <div class="leadership-card reveal">
-      ${
-  item.image
-    ? `<div class="leadership-image">
-         <img src="${item.image}" alt="${item.role}" />
-       </div>`
-    : ""
-}
+        ${item.image ? `<img class="leadership-img" src="${item.image}" alt="${item.role}" />` : ""}
         <h3>${item.role}</h3>
         <p class="narrative">${item.narrative}</p>
-        <p class="impact">"${item.impact}"</p>
-      </div>`
-    ).join('');
-  }
-// 13. Render Volunteering Carousel
-const volunteeringContainer = document.getElementById("volunteering-carousel");
-
-if (
-  volunteeringContainer &&
-  typeof VOLUNTEERING_EXPERIENCES !== "undefined"
-) {
-  volunteeringContainer.innerHTML = VOLUNTEERING_EXPERIENCES.map(
-    (item) => `
-      <div class="volunteer-card">
-        <div class="volunteer-image">
-          <img src="${item.image}" alt="${item.title}" />
-        </div>
-        <div class="volunteer-content">
-          <span class="volunteer-year">${item.year}</span>
-          <h4>${item.title}</h4>
-          <span class="volunteer-org">${item.org}</span>
-          <p>${item.description}</p>
-        </div>
+        <p class="impact">${item.impact}</p>
       </div>
     `
   ).join("");
+
+  const moreCard = `
+    <button class="leadership-card more-card" id="more-volunteering" type="button">
+      <div class="more-inner">
+        <div class="more-title">More</div>
+        <div class="more-sub">Volunteering →</div>
+      </div>
+    </button>
+  `;
+
+  const volunteeringCards =
+    typeof VOLUNTEERING_EXPERIENCES !== "undefined"
+      ? VOLUNTEERING_EXPERIENCES.map(
+          (v) => `
+        <div class="leadership-card volunteer-card-inline">
+          <img class="leadership-img" src="${v.image}" alt="${v.title}" />
+          <h3>${v.title}</h3>
+          <p class="narrative">${v.org}</p>
+          <p class="impact">${v.description}</p>
+        </div>
+      `
+        ).join("")
+      : "";
+
+  leadershipContainer.innerHTML = leadershipCards + moreCard + volunteeringCards;
+
+  // Clicking "More" scrolls to the first volunteering card
+  const moreBtn = document.getElementById("more-volunteering");
+  if (moreBtn) {
+    moreBtn.addEventListener("click", () => {
+      // scroll to the element right after the More card
+      const next = moreBtn.nextElementSibling;
+      if (next) next.scrollIntoView({ behavior: "smooth", inline: "start" });
+    });
+  }
 }
+  
   // ----------------------------------------------------------
   // 12. Render Quotes
   // ----------------------------------------------------------
