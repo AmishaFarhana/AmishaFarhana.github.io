@@ -317,6 +317,27 @@ const LINKEDIN_POSTS = [
 
 const EXPERIENCE = [
   {
+    role: "BS in Computer Science and Engineering",
+    company: "Loyola Academy",
+    period: "Previous",
+    description: "Undergraduate studies in C++, Java, Information Science, Computer Architecture and more.",
+    type: "education"
+  },
+  {
+    role: "Analyst Intern",
+    company: "Bhanzu",
+    period: "Previous",
+    description: "One of the first few hires in a start up founded by Neelakantha Bhanu, The world's fastest human calculator.",
+    type: "work"
+  },
+   {
+    role: "President",
+    company: "EmpowerHer Club, Loyola Academy",
+    period: "Previous",
+    description: "Designed lessons for young girls in local government schools, promoting education and confidence-building.",
+    type: "leadership"
+  },
+  {
     role: "KYC/AML Analyst",
     company: "JPMorgan Chase",
     period: "Previous",
@@ -354,7 +375,7 @@ const EXPERIENCE = [
   {
     role: "Library Student Ambassador",
     company: "CSUEB Library",
-    period: "Previous",
+    period: "Current",
     description: "Research support, outreach, and engagement initiatives to improve access to academic resources.",
     type: "campus"
   },
@@ -371,13 +392,6 @@ const EXPERIENCE = [
     period: "Previous",
     description: "Supported diversity and inclusion initiatives, coordinating programs for culturally responsive engagement.",
     type: "campus"
-  },
-  {
-    role: "President",
-    company: "EmpowerHer Club, Loyola Academy",
-    period: "Previous",
-    description: "Designed lessons for young girls in local government schools, promoting education and confidence-building.",
-    type: "leadership"
   }
 ];
 
