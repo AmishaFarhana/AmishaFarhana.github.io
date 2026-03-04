@@ -262,9 +262,9 @@ const LINKEDIN_POSTS = [
   {
     title: "Library Ambassador",
     date: "2024",
-    snippet: "Developed an AI waste classification system achieving 95% accuracy in identifying hazardous materials. Presented our innovative solution at the hackathon, securing recognition for addressing humanitarian needs.",
-    likes: 76,
-    comments: 8,
+    snippet: "Support students through research assistance and resource navigation while leading outreach initiatives that strengthen campus engagement. Contribute to operational improvements and data-informed student support strategies within the university library system.",
+    likes: 79,
+    comments: 10,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
     image: "assets/lib.png",
   },
@@ -289,7 +289,7 @@ const LINKEDIN_POSTS = [
   {
     title: "Tesla Factory Visit",
     date: "2024",
-    snippet: "Industry exposure at its finest — witnessing the intersection of manufacturing innovation, data-driven operations, and sustainability at Tesla's facility.",
+    snippet: "Industry exposure at its finest, witnessing the intersection of manufacturing innovation, data-driven operations, and sustainability at Tesla's facility.",
     likes: 72,
     comments: 9,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
@@ -298,18 +298,18 @@ const LINKEDIN_POSTS = [
   {
     title: "Orientation Leader",
     date: "2025",
-    snippet: "Insurance Claims Risk Segmentation for Allianz — my first deep dive into clustering and supervised modeling for real-world insurance analytics. #WhatIBuiltInMSBA",
-    likes: 48,
-    comments: 7,
+    snippet: "Led campus tours and orientation sessions for incoming students, creating welcoming, high-energy experiences that fostered belonging, confidence, and community during their transition to university life.",
+    likes: 120,
+    comments: 5,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
     image: "assets/ol.png"
   },
   {
     title: "Pioneer's Perspective - Episode 2",
     date: "2024",
-    snippet: "Empowering conversations about leadership, resilience, and breaking barriers. Proud to be part of a community that uplifts women in business and technology.",
-    likes: 61,
-    comments: 4,
+    snippet: "Organized and executed a large-scale Business Analytics Club event featuring alumni and industry leaders, delivering keynote sessions and extended career forums that strengthened networking and professional development opportunities for students.",
+    likes: 102,
+    comments: 1,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
     image: "assets/pp.png"
   }
