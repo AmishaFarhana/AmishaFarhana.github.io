@@ -293,7 +293,7 @@ const LINKEDIN_POSTS = [
     likes: 48,
     comments: 7,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    image: "assets/hcl.png"
+    image: "assets/ol.png"
   },
   {
     title: "Women in Leadership Forum",
