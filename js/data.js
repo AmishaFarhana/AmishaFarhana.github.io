@@ -251,13 +251,13 @@ const LINKEDIN_POSTS = [
     image: "assets/datathon.png"
   },
   {
-    title: "VitaNova AI at HackHayward",
+    title: "Library Ambassador",
     date: "2024",
     snippet: "Developed an AI waste classification system achieving 95% accuracy in identifying hazardous materials. Presented our innovative solution at the hackathon, securing recognition for addressing humanitarian needs.",
     likes: 76,
     comments: 8,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    image: "assets/vitanova.png",
+    image: "assets/lib.png",
   },
   {
     title: "ALPHA Tech Summit at Microsoft",
