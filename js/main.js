@@ -294,9 +294,9 @@ if (leadershipContainer && typeof LEADERSHIPHIGHLIGHTS !== 'undefined') {
   leadershipContainer.innerHTML = LEADERSHIPHIGHLIGHTS.map(item => `
     <div class="leadership-card reveal">
     ${
-  card.image
+  item.image
     ? `<div class="leadership-image">
-         <img src="${card.image}" alt="${card.title}" />
+         <img src="${item.image}" alt="${item.role}" />
        </div>`
     : ""
 }
