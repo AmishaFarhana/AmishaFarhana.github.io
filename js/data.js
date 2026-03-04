@@ -293,7 +293,7 @@ const LINKEDIN_POSTS = [
     likes: 48,
     comments: 7,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/hcl.png"
   },
   {
     title: "Women in Leadership Forum",
@@ -302,7 +302,7 @@ const LINKEDIN_POSTS = [
     likes: 61,
     comments: 4,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/wil.png"
   },
   {
     title: "VP of Business Analytics Club",
@@ -311,7 +311,7 @@ const LINKEDIN_POSTS = [
     likes: 83,
     comments: 11,
     linkedinUrl: "https://www.linkedin.com/in/amishafarhanashaik/recent-activity/all/",
-    imagePlaceholder: true
+    image: "assets/pp.png"
   }
 ];
 
