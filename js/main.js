@@ -273,25 +273,171 @@ document.addEventListener('DOMContentLoaded', () => {
 // --------------------------------------------------------
   // 11. Render Leadership Cards
   // ----------------------------------------------------------
-  const leadershipContainer = document.getElementById('leadership-cards');
+ // --------------------------------------------------------
+// 11. Render Leadership Cards — Netflix-style Carousel
+// --------------------------------------------------------
+const leadershipContainer = document.getElementById('leadership-cards');
 
-  if (leadershipContainer && typeof LEADERSHIP_HIGHLIGHTS !== 'undefined') {
-    leadershipContainer.innerHTML = LEADERSHIP_HIGHLIGHTS.map(
-      (item) => `
-      <div class="leadership-card reveal">
-      ${
-  item.image
-    ? `<div class="leadership-image">
-         <img src="${item.image}" alt="${item.role}" />
-       </div>`
-    : ""
+if (leadershipContainer && typeof LEADERSHIPHIGHLIGHTS !== 'undefined') {
+  // Wrap the track in an outer div for overflow:hidden
+  const section = leadershipContainer.parentElement;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'leadership-carousel-wrapper';
+  const outer = document.createElement('div');
+  outer.className = 'leadership-carousel-track-outer';
+
+  section.insertBefore(wrapper, leadershipContainer);
+  outer.appendChild(leadershipContainer);
+  wrapper.appendChild(outer);
+
+  // Render cards
+  leadershipContainer.innerHTML = LEADERSHIPHIGHLIGHTS.map(item => `
+    <div class="leadership-card reveal">
+      <h3>${item.role}</h3>
+      <p class="narrative">${item.narrative}</p>
+      <p class="impact">${item.impact}</p>
+    </div>
+  `).join('');
+
+  // --- Carousel Logic ---
+  const getCardsPerView = () => {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  };
+
+  let currentIndex = 0;
+  const totalCards = LEADERSHIPHIGHLIGHTS.length;
+
+  // Nav HTML
+  const nav = document.createElement('div');
+  nav.className = 'carousel-nav';
+
+  const totalGroups = () => Math.ceil(totalCards / getCardsPerView());
+
+  const buildDots = () => {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalGroups(); i++) {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === Math.floor(currentIndex / getCardsPerView()) ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i * getCardsPerView()));
+      dotsContainer.appendChild(dot);
+    }
+  };
+
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'carousel-btn';
+  prevBtn.setAttribute('aria-label', 'Previous');
+  prevBtn.innerHTML = '&#8592;';
+
+  const dotsContainer = document.createElement('div');
+  dotsContainer.className = 'carousel-dots';
+
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'carousel-btn';
+  nextBtn.setAttribute('aria-label', 'Next');
+  nextBtn.innerHTML = '&#8594;';
+
+  nav.appendChild(prevBtn);
+  nav.appendChild(dotsContainer);
+  nav.appendChild(nextBtn);
+  wrapper.appendChild(nav);
+
+  const updateButtons = () => {
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex + getCardsPerView() >= totalCards;
+  };
+
+  const updateDots = () => {
+    const activeDotIndex = Math.floor(currentIndex / getCardsPerView());
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeDotIndex);
+    });
+  };
+
+  const goTo = (index) => {
+    const cpv = getCardsPerView();
+    currentIndex = Math.max(0, Math.min(index, totalCards - cpv));
+    const cardWidth = leadershipContainer.children[0]?.offsetWidth || 0;
+    const gap = 24;
+    leadershipContainer.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+    updateButtons();
+    updateDots();
+  };
+
+  prevBtn.addEventListener('click', () => goTo(currentIndex - getCardsPerView()));
+  nextBtn.addEventListener('click', () => goTo(currentIndex + getCardsPerView()));
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchStartTransform = 0;
+
+  leadershipContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    const matrix = new DOMMatrix(getComputedStyle(leadershipContainer).transform);
+    touchStartTransform = matrix.m41;
+    leadershipContainer.classList.add('is-dragging');
+  }, { passive: true });
+
+  leadershipContainer.addEventListener('touchmove', (e) => {
+    const dx = e.touches[0].clientX - touchStartX;
+    leadershipContainer.style.transform = `translateX(${touchStartTransform + dx}px)`;
+  }, { passive: true });
+
+  leadershipContainer.addEventListener('touchend', (e) => {
+    leadershipContainer.classList.remove('is-dragging');
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 60) {
+      if (dx < 0) goTo(currentIndex + getCardsPerView());
+      else goTo(currentIndex - getCardsPerView());
+    } else {
+      goTo(currentIndex); // snap back
+    }
+  });
+
+  // Mouse drag support (desktop)
+  let mouseStartX = 0;
+  let mouseStartTransform = 0;
+  let isDragging = false;
+
+  leadershipContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    mouseStartX = e.clientX;
+    const matrix = new DOMMatrix(getComputedStyle(leadershipContainer).transform);
+    mouseStartTransform = matrix.m41;
+    leadershipContainer.classList.add('is-dragging');
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - mouseStartX;
+    leadershipContainer.style.transform = `translateX(${mouseStartTransform + dx}px)`;
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    leadershipContainer.classList.remove('is-dragging');
+    const dx = e.clientX - mouseStartX;
+    if (Math.abs(dx) > 60) {
+      if (dx < 0) goTo(currentIndex + getCardsPerView());
+      else goTo(currentIndex - getCardsPerView());
+    } else {
+      goTo(currentIndex);
+    }
+  });
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => {
+    buildDots();
+    goTo(0);
+  });
+
+  // Init
+  buildDots();
+  updateButtons();
 }
-        <h3>${item.role}</h3>
-        <p class="narrative">${item.narrative}</p>
-        <p class="impact">"${item.impact}"</p>
-      </div>`
-    ).join('');
-  }
+
   // ----------------------------------------------------------
   // 12. Render Quotes
   // ----------------------------------------------------------
