@@ -359,6 +359,13 @@ const EXPERIENCE = [
     type: "leadership"
   },
   {
+    role: "Business Analyst",
+    company: "Oatmeal AI",
+    period: "Previous",
+    description: "Led KPI reporting and data validation efforts in a fast-paced AI startup environment.",
+    type: "work"
+  },
+  {
     role: "Senator",
     company: "College of Business & Economics, CSUEB",
     period: "Current",
